@@ -1,7 +1,7 @@
 #!/bin/sh -e
 # Run this script from within the docker container.
 
-BUCKET=heroku-buildpack-elm
+BUCKET=elm-buildpack
 S3UPLOAD="aws s3 sync --acl public-read"
 
 # XXX: awscli is unable to read volume-mounted ~/.aws from within a docker container. So, we resort to this hack.

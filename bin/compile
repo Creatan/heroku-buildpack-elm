@@ -19,7 +19,7 @@ fi
 
 ELM_VERSION=${ELM_VERSION:-0.18.0}
 CACHE_BUILD_OBJECTS=${CACHE_BUILD_OBJECTS:-true}
-S3_URL=https://s3.amazonaws.com/heroku-buildpack-elm/assets
+S3_URL=https://s3.eu-central-1.amazonaws.com/elm-buildpack/assets
 
 download() {
            url=$1
