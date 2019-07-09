@@ -1,16 +1,16 @@
 # This Dockerfile is merely used to generate binaries for direct use during
 # buildpack runtime.
 
-FROM heroku/cedar
+FROM ubuntu:18.04
 
-RUN apt-get -qy update && apt-get -y install npm nodejs-legacy
+RUN apt-get -qy update && apt-get -y install npm nodejs
 ENV PATH /app/bin:$PATH
 WORKDIR /tmp
 
 
 # Install Elm
 ENV ELM_VERSION 0.18.0
-
+RUN npm update -g npm
 RUN npm install -g elm@${ELM_VERSION}
 RUN mkdir -p /app/.profile.d /app/bin
 RUN cp /usr/local/lib/node_modules/elm/Elm-Platform/${ELM_VERSION}/.cabal-sandbox/bin/* /app/bin
